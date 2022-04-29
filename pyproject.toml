@@ -6,7 +6,7 @@ authors = ["Elias Posen <elias@posen.ch>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 fastapi = "^0.75.2"
 SQLAlchemy = "^1.4.36"
 uvicorn = "^0.17.6"
