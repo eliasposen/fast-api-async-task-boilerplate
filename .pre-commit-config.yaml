@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        stages: [commit]
+        language: system
+        entry: black
+        types: [python]
+      - id: isort
+        name: isort
+        stages: [commit]
+        language: system
+        entry: isort
+        args:
+          - --trailing-comma
+          - --use-parentheses
+        types: [python]
