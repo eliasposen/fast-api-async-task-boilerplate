@@ -1,5 +1,7 @@
+from datetime import datetime
+
 from passlib.context import CryptContext
-from pony.orm import Database, Required
+from pony.orm import Database, Optional, Required
 
 import app.settings as settings
 
@@ -11,6 +13,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 class User(db.Entity):
     username = Required(str, unique=True)
     hashed_password = Required(str)
+    last_login = Optional(datetime)
 
     @staticmethod
     def hash_password(plain_password: str) -> str:
