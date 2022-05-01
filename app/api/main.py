@@ -1,11 +1,11 @@
 from fastapi import Depends, FastAPI, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordRequestForm
 
 import app.api.schemas as schemas
 import app.api.security as security
+from app.models import User
 
 app = FastAPI()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 @app.post("/token")
@@ -25,3 +25,13 @@ async def login(login_data: OAuth2PasswordRequestForm = Depends()):
     access_token = security.create_jwt_access_token(user)
 
     return schemas.Token(access_token=access_token, token_type="Bearer")
+
+
+@app.get("/public")
+async def read_public():
+    return {"public": True, "jams": "♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪"}
+
+
+@app.get("/users/me")
+async def read_users_me(current_user: User = Depends(security.get_current_user)):
+    return schemas.User.from_orm(current_user)
