@@ -8,7 +8,7 @@ from pony.orm import db_session
 import app.settings as settings
 from app.models import User
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 
 @db_session
