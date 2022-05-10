@@ -1,8 +1,6 @@
-import queue
 import uuid
 from datetime import datetime
 from typing import Any
-from unittest import result
 
 from pydantic import BaseModel
 from rq.job import Job as RQJob
@@ -27,3 +25,7 @@ class Job(BaseModel):
             result=rq_job.result,
             created_at=rq_job.created_at,
         )
+
+
+class SleepJobIn(BaseModel):
+    sleep_sec: int
