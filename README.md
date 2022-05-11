@@ -12,7 +12,18 @@ Boilerplate project for a microservice that is easy to extend with new endpoints
 - [PonyORM](https://docs.ponyorm.org/toc.html)
 - [Python-RQ](https://python-rq.org/)
 
-## Goals
+## Goals :rocket:
+
+- [x] FastAPI authentication/authorization via OAuth2 & JWT token
+- [x] Sample public and private endpoints
+- [x] Retrieve async task info by UUID via task endpoint
+- [x] Sample async task implementation with associated POST endpoint
+- [ ] User roles
+- [ ] User management via endpoints
+- [ ] SSO via SAML 2.0
+- [ ] Dockerfile and docker-compose configurations
+- [ ] K8s/Helm deployment specs and charts
+- [ ] Usage and extension documentation
 
 ## Installation
 
@@ -58,16 +69,3 @@ Create user via CLI. Run following for help message
 ```
 python -m scripts.create_user --help
 ```
-
-## Goals :rocket:
-
-- [x] FastAPI authentication/authorization via OAuth2 & JWT token
-- [x] Sample public and private endpoints
-- [x] Retrieve async task info by UUID via task endpoint
-- [x] Sample async task implementation with associated POST endpoint
-- [ ] User roles
-- [ ] User management via endpoints
-- [ ] SSO via SAML 2.0
-- [ ] Dockerfile and docker-compose configurations
-- [ ] K8s/Helm deployment specs and charts
-- [ ] Usage and extension documentation
